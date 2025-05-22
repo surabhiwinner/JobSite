@@ -8,6 +8,11 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+  <!-- style-font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+
   <!-- font awsome icons  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -37,6 +42,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+   <style>
+    body {
+      font-family: 'Bitter', serif;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -47,10 +58,10 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">JobSite</h1>
+        <h1 class="sitename" style="font-family: 'Bitter', serif;">JobSite</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" style="font-family: 'Bitter', serif;">
         <ul>
           {% if page == 'home-page' %}
           <li><a href="{% url 'home' %}" class="active">Home</a></li>

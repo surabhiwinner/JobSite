@@ -3,8 +3,8 @@
 
 {% block section %}
 <div class="justify-content-end   d-flex row me-lg-5 "> 
-<div class="col-2 mt-2"><button type="submit" class="btn btn-success"> Update Employer</button></div>
-<div class="col-2 mt-2" > <button type="submit" class="btn btn-light">  View Active Jobs</button> </div>
+<div class="col-2 mt-2"><a href="" type="submit" class="btn btn-success"> Update Employer</a></div>
+<div class="col-2 mt-2" > <a href="{% url 'employer-jobs' employer.uuid %}"type="submit" class="btn btn-light">  View Active Jobs</a></div>
 </div>
 
 <div class="container py-5 my-3">
