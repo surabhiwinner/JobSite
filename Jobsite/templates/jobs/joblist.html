@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block section %}
+
+
+    <section id="blog-posts" class="blog-posts section">
+
+        <div class="container">
+          <div class="row gy-4">
+            
+            {% for job in jobs %}
+            <div class="col-lg-6">
+              <article>
+  
+                <div class="post-category ">
+                  <!-- <img src="/static/assets/img/blog/blog-1.jpg" alt="" class="img-fluid"> -->
+                   
+                   <a href="{% url 'jobdetails' job.uuid %}" class="  text-primary fw-bold fs-3"> {{ job.title }} </a>
+                   <p class="post-category  card-body fs-6">  
+                  
+                      <a href=""> {{ job.employer }}</a>
+    
+                      | {{ job.location }}| {{job.work_mode}} | <time datetime="2022-01-01">{{ job.posted_date}}</time><span class="text-success fw-bold "> {{ job.posted_date|timesince }} ago</span> 
+                    
+                      
+                    </p> 
+    
+                </div>
+  
+              </article>
+            </div><!-- End post list item -->
+  
+            {% endfor %}
+          </div>
+        </div>
+
+  
+      </section><!-- /Blog Posts Section -->
+
+{% endblock %}

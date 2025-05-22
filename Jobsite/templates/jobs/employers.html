@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block section %}
+
+    
+<section id="blog-posts" class="blog-posts section">
+
+    <div class="container ">
+       <div class="d-flex row"> <h2 class="post-category text-center col -7 " style="color: coral;">WebBoost Solutions by UM</h2>
+        <a href=" {% url 'create-jobs' %}" class="btn btn-success border border-success rounded-3"> Create New Jobs </a>
+        
+       </div>
+       <br>
+      <div class="row gy-4">
+                
+        {% for job in jobs %}
+        <div class="col-lg-12 justify-content-between">
+
+          
+            <div class="d-flex row justify-content-between" >
+                <article>
+            <div class="post-category col-lg-9 ">
+              <!-- <img src="/static/assets/img/blog/blog-1.jpg" alt="" class="img-fluid"> -->
+               
+                <p class="post-item text-primary fw-bold fs-3"> {{ job.title }}</p> 
+               <p class="post-category  card-body fs-6">  
+              
+                  <!-- <a href="blog-details.html"> {{ job.employer }}</a> -->
+
+                  | {{ job.location }}| {{job.work_mode}} | <time datetime="2022-01-01">{{ job.posted_date}}</time><span class="text-success fw-bold "> {{ job.posted_date|timesince }} ago</span> 
+                
+                  
+                </p> 
+
+            </div>
+            <!-- icons  -->
+
+            <div class="col-lg-2"> 
+                <a href="{% url 'jobdetails' job.uuid %}" class="text-primary me-2"><i class="fas fa-eye"></i></a>
+               
+                <a href="{% url 'employer-update-job' job.uuid %}" class="text-warning me-2"><i class="fas fa-pen"></i></a>
+                <a href="{% url 'job-employer-delete' job.uuid %}" class="text-danger"><i class="fas fa-trash"></i></a></div>
+            </div><!-- End post list item -->
+        </article>
+        </div>
+          
+          
+        {% endfor %}
+      </div>
+    </div>
+
+
+  </section><!-- /Blog Posts Section -->
+
+
+{% endblock %}

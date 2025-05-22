@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+
+{% block section %}
+ <!-- Categories Start -->
+
+
+
+<!-- Courses Start -->
+<div class="container-xxl py-5 d-flex row">
+    <div class="container col-10">
+        {% for employer in employeers %}
+
+        <a href="{% url 'employer-detail' employer.uuid %}"><span class="section-title  text-primary fs-3 fw-bold" >{{ employer.company_name}} </span> </a>
+        {% endfor %}
+          </div>
+
+    <!-- <div class="col-2 align-items-end">
+        <a href="" class="btn btn-success rounded-3 border" type="submit"><span class="text-white "><i class="fa-solid fa-plus me-3"></i>Register Company</span></a>
+    </div> -->
+</div>
+<!-- Courses End -->
+
+
+{% endblock %}
