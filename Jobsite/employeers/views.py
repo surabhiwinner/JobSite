@@ -53,7 +53,7 @@ class EmployerJobView(View):
 
     def get(self, request, *args, **kwargs):
 
-        query = request.GET.get('query')
+        query = request.GET.get('query','')
 
         print(query)
 
@@ -75,7 +75,9 @@ class EmployerJobView(View):
                                                 Q(work_mode__icontains = query))
         
         data = {
-            'jobs' : jobs
+            'jobs' : jobs,
+            'query'     : query,
+            'employer': employer
         }
 
         return render(request,'employeers/employer-jobs.html', context=data)
