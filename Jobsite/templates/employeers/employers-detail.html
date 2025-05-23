@@ -3,7 +3,11 @@
 
 {% block section %}
 <div class="justify-content-end   d-flex row me-lg-5 "> 
-<div class="col-2 mt-2"><a href="" type="submit" class="btn btn-success"> Update Employer</a></div>
+
+  {% if request.user.is_authenticated  and  profile == is_owner %}
+    
+  <div class="col-2 mt-2"><a href="" type="submit" class="btn btn-success"> Update Employer</a></div>
+{% endif %}
 <div class="col-2 mt-2" > <a href="{% url 'employer-jobs' employer.uuid %}"type="submit" class="btn btn-light">  View Active Jobs</a></div>
 </div>
 

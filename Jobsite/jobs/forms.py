@@ -101,7 +101,7 @@ class JobCreateForm(forms.ModelForm):
 
         model = Jobs
 
-        exclude = ['uuid','active_status']
+        exclude = ['uuid','active_status','employer']
 
         widgets = {
 
@@ -178,9 +178,9 @@ class JobCreateForm(forms.ModelForm):
                                     }))
 
 
-    employer = forms.ModelChoiceField( queryset=Employeers.objects.all(), widget=forms.Select(attrs={
-                                                                'class' : 'form-control'
-                                }))
+#     employer = forms.ModelChoiceField( queryset=Employeers.objects.all(), widget=forms.Select(attrs={
+#                                                                 'class' : 'form-control'
+#                                 }))
 
 
 def __init__(self, *args, **kwargs):

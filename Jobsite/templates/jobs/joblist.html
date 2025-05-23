@@ -6,6 +6,16 @@
 
     <section id="blog-posts" class="blog-posts section">
 
+      <!-- search bar  -->
+          <div class="row justify-content-end">
+            <div class="col-6 my-2 mb-3">
+                <form action="{% url 'joblist' %}" method="get">
+                <input class="form-control" type="text" placeholder="search jobs/ company/ salary/ onsite/ remote etc" name="query"{% if query %} value="{{query}}" {% endif %}>
+                </form>
+        </div>
+
+        <!-- search bar end  -->
+
         <div class="container">
           <div class="row gy-4">
             
